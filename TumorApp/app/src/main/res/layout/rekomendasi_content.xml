@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rkmd_linearLayoutcontent2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/rkmd_tv_KeteranganJudul"
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="Aku adalah anak sehat Tubuh ku kuat " />
+
+            <TextView
+                android:paddingLeft="15dp"
+                android:id="@+id/rkmd_tv_keteranganKonten"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:text="Lorem IPSUM DOLOR SIR AMER ASDJASDJIASD ASDPASODASI asdjklasd aasodjias dioasDJ AIasdasdasdasdasasdasdasdasdOdjas asdasdasdasdasasdasddd" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rkmd_linearLayoutcontent2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/learning" />
+
+            <TextView
+                android:id="@+id/rekomendasi_lanjutkanBaca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lanjutkan_baca"
+                android:textStyle="italic|bold" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
