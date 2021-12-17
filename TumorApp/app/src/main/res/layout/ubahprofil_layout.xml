@@ -37,34 +37,35 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/up_til_title"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="20dp"
         android:hint="Nama"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/up_linearLayout_title"
-        app:layout_constraintstart_tostartof="parent"
-        app:layout_constraintend_toendof="parent"
         >
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/up_et_Nama"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/up_til_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_margin="20dp"
         android:hint="Email"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:layout_constraintTop_toBottomOf="@id/up_til_title"
-        app:layout_constraintstart_tostartof="parent"
-        app:layout_constraintend_toendof="parent">
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/up_til_title">
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

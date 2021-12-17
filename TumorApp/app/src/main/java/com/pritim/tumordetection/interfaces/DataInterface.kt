@@ -1,6 +1,8 @@
-package com.pritim.tumordetection.`interface`
+package com.pritim.tumordetection.interfaces
 
 import com.pritim.tumordetection.data.User
+import com.pritim.tumordetection.responses.responseGetUser
+import com.pritim.tumordetection.responses.responseRequestOnly
 import retrofit2.http.POST
 import retrofit2.Call
 import retrofit2.http.Body
@@ -9,18 +11,14 @@ import retrofit2.http.FormUrlEncoded
 
 interface DataInterface {
 
-    @FormUrlEncoded
     @POST("/login")
     fun getUserData(
-        @Field("nama") nama : String,
-        @Field("email")email:String,
-        @Field("nomor_hp") nomor_hp : Int,
-        @Field("password") password : String) : Call<User>
+    @Body hashMap: HashMap<String, Any>) : Call<responseGetUser>
 
 
-    @FormUrlEncoded
     @POST("/signup")
-    fun signup(@Field("email") email: String,
-    @Field("password") password: String) : Call<User>
+    fun signup(
+        @Body hashMap: HashMap<String,String>
+    ) : Call<responseRequestOnly>
 
 }
