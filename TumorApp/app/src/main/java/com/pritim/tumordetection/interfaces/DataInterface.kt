@@ -21,4 +21,9 @@ interface DataInterface {
         @Body hashMap: HashMap<String,String>
     ) : Call<responseRequestOnly>
 
+    @POST("/update")
+    fun update(
+            @Body hashMap: HashMap<String, Any>
+    ) : Call<responseGetUser>
+
 }
