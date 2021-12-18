@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const mongoClient = require("mongodb").MongoClient;
-
+const objectId = require("mongodb").ObjectId;
 const url = "mongodb://localhost:27017/";
 
 app.use(express.json());
@@ -38,9 +38,12 @@ mongoClient.connect(url, (err, db) => {
 
     app.post("/signup", (req, res) => {
       const newUser = {
-        name: req.body.nama,
+        nama: req.body.nama,
         email: req.body.email,
         password: req.body.password,
+        nomor_hp: "",
+        alamat: "",
+        hasil_prediksi: 0,
       };
       console.table(newUser);
       const query = { email: newUser.email };
@@ -49,10 +52,9 @@ mongoClient.connect(url, (err, db) => {
           collection.insertOne(newUser, (err, result) => {
             console.log("Succesfully Insert");
           });
-          console.log(res.status(200).send(JSON.stringify(getSuccess())));
-          return res.status(200).send(getSuccess());
+          return res.status(200).send(JSON.stringify(getSuccess()));
         } else {
-          return res.status(400).send(getFailed());
+          return res.status(400).send(JSON.stringify(getFailed()));
         }
       });
     });
@@ -64,20 +66,16 @@ mongoClient.connect(url, (err, db) => {
       };
       collection.findOne(query, (err, result) => {
         if (result !== null) {
-          if (result.nomor_hp === null) {
-            result.nomor_hp = "";
-          }
           const objToSend = {
-            message: "Success",
-            code: 200,
-            data: {
-              name: result.name,
-              email: result.email,
-              password: result.password,
-              nomor_hp: result.nomor_hp,
-            },
+            id: result._id,
+            nama: result.nama,
+            email: result.email,
+            password: result.password,
+            nomor_hp: "",
+            alamat: "",
+            hasil_prediksi: 0,
           };
-          console.table(objToSend);
+          console.table(result.id);
           return res.send(
             JSON.stringify(getResponse(200, "Success", objToSend))
           );
@@ -86,6 +84,37 @@ mongoClient.connect(url, (err, db) => {
         }
       });
     });
+    app.post("/update", (req, res) => {
+      const data = {
+        email: req.body.email,
+        password: req.body.password,
+        nama: req.body.nama,
+        nomor_hp: req.body.nomor_hp,
+        alamat: req.body.alamat,
+        hasil_prediksi: req.body.hasil_prediksi,
+      };
+      var id = req.body.id;
+      collection.updateOne(
+        { _id: objectId(id) },
+        { $set: data },
+        (err, result) => {
+          if (!err) {
+            console.table(data);
+            return res.send(JSON.stringify(getResponse(200, "Success", data)));
+          }
+          return res.send(JSON.stringify(getResponse(400, "Bad Request", {})));
+        }
+      );
+    });
+app.post("/delete", (req, res) => {
+  collection.deleteOne({_id : objectId(req.body.id)}, (err,result) => {
+    if(!err) {
+      return res.status(200).send(JSON.stringify(getSuccess()));
+    }
+    return res.status(200).send(JSON.stringify(getFailed()));
+  })
+}
+
   }
 });
 
