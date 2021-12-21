@@ -22,7 +22,7 @@ a {
 }
 
 .container {
-  max-width: 1024px;
+  max-width: 1500px;
   margin: auto;
 }
 
@@ -47,7 +47,7 @@ a {
 .border-shadow {
   background-color: #fff;
   box-shadow: 1px 3px 10px #abb2b8;
-  border-radius: 5rem;
+  border-radius: 0.5rem;
 }
 
 .text-dark {
