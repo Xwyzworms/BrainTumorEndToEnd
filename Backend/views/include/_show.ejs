@@ -21,25 +21,27 @@
           </tr>
         </thead>
         <tbody>
+          <% for(let i = 0;i <users.length;i++){ %>
           <tr>
-            <td>1</td>
-            <td>OBJK@31</td>
-            <td>Prim</td>
-            <td>Irsuchzz@gmaisde.com</td>
-            <td>Fusethzawe</td>
-            <td>833216231</td>
-            <td>90</td>
+            <td><%= i+1 %></td>
+            <td><%= users[i]._id %></td>
+            <td><%= users[i].nama %></td>
+            <td><%= users[i].email %></td>
+            <td><%= users[i].password %></td>
+            <td><%= users[i].nomor_hp %></td>
+            <td><%= users[i].confidence%></td>
             <td>
-              <a href="update-user" class="btn border-shadow update">
+              <a href="update-user?id=<%=users[i]._id%>" class="btn border-shadow update">
                 <span class="text-gradient"
                   ><i class="fas fa-pencil-alt"></i
                 ></span>
               </a>
-              <a href="#" class="btn border-shadow delete">
+              <a class="btn border-shadow delete" data-id=<%=users[i]._id%> >
                 <span class="text-gradient"><i class="fas fa-times"></i></span>
               </a>
             </td>
           </tr>
+          <% } %>
         </tbody>
       </table>
     </form>

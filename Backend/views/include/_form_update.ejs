@@ -1,31 +1,40 @@
-<form class="update_user" method="POST">
+<form class="update_user" id="tolo" method="POST">
   <div class="new_user">
     <div class="form-group">
       <label for="name" class="text-ligth">Name</label>
-      <input type="hidden" name="index" value="" />
-      <input type="hidden" name="id" value="" />
-      <input type="text" name="name" value="" placeholder="Enter Name" />
+      <input type="hidden" name="id" value="<%=user._id%>" />
+      <input
+        type="text"
+        name="nama"
+        value="<%=user.nama%>"
+        placeholder="Enter Name"
+      />
     </div>
     <div class="form-group">
       <label for="email" class="text-ligth">Email</label>
-      <input type="text" name="email" value="" placeholder="Email@gmail.com" />
+      <input
+        type="text"
+        name="email"
+        value="<%=user.email%>"
+        placeholder="Email@gmail.com"
+      />
     </div>
     <div class="form-group">
       <label for="password" class="text-ligth">Password</label>
-      <input type="password" name="password" value="" />
+      <input type="password" name="password" value="<%=user.password%>" />
     </div>
     <div class="form-group">
       <label for="nomor_hp" class="text-ligth">No Hp</label>
       <input
         type="number"
         name="nomor_hp"
-        value=""
+        value="<%=user.nomor_hp%>"
         placeholder="+62 xxx-xxxx-xxx"
       />
     </div>
     <div class="form-group">
       <label for="confidence" class="text-ligth">Hasil Screening</label>
-      <input type="number" name="confidence" value="" />
+      <input type="number" name="confidence" value="<%=user.confidence%>" />
     </div>
     <div class="form-group">
       <button type="submit" class="btn text-dark update">Save</button>
