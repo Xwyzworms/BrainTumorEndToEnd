@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap");
+
+:root {
+  --ligth: #adb4ad;
+  --dark: #000000;
+  --border: #dee2e6;
+  --border-btn: #edf2f4;
+  --icon-primary: #8e2de2;
+  --icon-secondary: #a04edb;
+  --background-color: #7736bd;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  font-family: "PT Sans", sans-serif;
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.d-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.justify_between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.border-shadow {
+  background-color: #fff;
+  box-shadow: 1px 3px 10px #abb2b8;
+  border-radius: 5rem;
+}
+
+.text-dark {
+  color: var(--dark);
+}
+
+.inline {
+  display: inline-block;
+}
+
+.text-light {
+  color: var(--ligth);
+}
+
+.text-gradient {
+  background: linear-gradient(
+    to right,
+    var(--icon-primary),
+    var(--icon-secondary)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header nav {
+  background-color: var(--background-color);
+  padding: 1rem 0;
+  width: 100%;
+  margin-bottom: 6rem;
+}
+
+.site-main {
+  font-family: "Barlow", sans-serif;
+}
+
+.site-main .container .box-nav > a {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.site-main .container form {
+  margin: 2rem 0rem;
+}
+
+table {
+  border-spacing: 0px;
+  width: 100%;
+}
+
+.table td,
+.table th {
+  padding: 0.75rem;
+  vertical-align: top;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.table td > a.btn {
+  padding: 0.3rem 1rem;
+  font-size: 1.1rem;
+  margin: 0.2rem;
+}
+
+.table tr:hover {
+  background-color: #9263c0;
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+  border: 1px solid #9263c0;
+}
+.table tr:hover td > a {
+  box-shadow: none;
+}
+
+.table .thead-dark th:first-child {
+  border-top-left-radius: 0.35rem;
+  border-bottom-left-radius: 0.35rem;
+}
+
+.table .thead-dark th:last-child {
+  border-top-right-radius: 0.35rem;
+  border-bottom-right-radius: 0.35rem;
+}
+
+.table tbody td:first-child {
+  border-bottom-left-radius: 0.35rem;
+}
+.table tbody td:last-child {
+  border-bottom-right-radius: 0.35rem;
+}
+.table .thead-dark th {
+  color: #fff;
+  background-color: var(--dark);
+  border: 1px solid var(--dark);
+}
+
+@media only screen and (max-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    font-size: 0.2rem;
+  }
+  thead tr {
+    display: none;
+  }
+  tr {
+    border: 1px solid var(--border);
+  }
+  td {
+    border: none;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+/* Add & Update User Styling */
+.form-title {
+  margin-top: 2rem;
+}
+
+.form-title > h2 {
+  padding: 0.5rem 0;
+}
+
+.new_user {
+  max-width: 786px;
+  margin: auto;
+}
+
+.update_user .form-group,
+.add_user .form-group {
+  margin: 0.4rem 0;
+}
+
+.update_user .form-group input,
+.add_user .form-group input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  margin: 0.4rem;
+  border: 1px solid var(--border);
+  font-family: "Barlow", sans-serif;
+  border-radius: 0.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.update_user .form-group input:hover,
+.add_user .form-group input:hover {
+  background-color: #9263c0;
+  transition: all 0.3s;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.update_user .form-group input::placeholder,
+.add_user .form-group input::placeholder {
+  transition: all 0.3s;
+  color: #fff;
+}
+
+.update_user .new_user .form-group > .btn,
+.add_user .new_user .form-group > .btn {
+  width: 100%;
+  padding: 0.4rem 1rem;
+  border: none;
+  background-color: var(--icon-primary);
+  font-family: "PT Sans", sans-serif;
+  border-radius: 0.2rem;
+  margin: 0.4rem;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.update_user .new_user .form-group > .btn:hover,
+.add_user .new_user .form-group > .btn:hover {
+  background-color: var(--icon-secondary);
+  transition: all 0.3s;
+}
