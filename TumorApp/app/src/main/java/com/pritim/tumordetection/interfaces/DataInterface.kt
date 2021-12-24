@@ -3,27 +3,28 @@ package com.pritim.tumordetection.interfaces
 import com.pritim.tumordetection.data.User
 import com.pritim.tumordetection.responses.responseGetUser
 import com.pritim.tumordetection.responses.responseRequestOnly
-import retrofit2.http.POST
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
+import retrofit2.http.*
 
 interface DataInterface {
 
-    @POST("/login")
+    @POST("/api/loginEmail")
     fun getUserData(
     @Body hashMap: HashMap<String, Any>) : Call<responseGetUser>
 
 
-    @POST("/signup")
+    @POST("/api/daftar")
     fun signup(
         @Body hashMap: HashMap<String,String>
     ) : Call<responseRequestOnly>
 
-    @POST("/update")
-    fun update(
-            @Body hashMap: HashMap<String, Any>
+    @DELETE("/api/users/{id}")
+    fun deleteGans(@Path("id") id : String) : Call<responseRequestOnly>
+
+
+    @PUT("/api/users/{id}")
+    fun update(@Path("id") userID : String,
+               @Body hashMap: HashMap<String, Any>
     ) : Call<responseGetUser>
 
 }

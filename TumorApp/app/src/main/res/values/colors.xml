@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="negativeCases">#008911</color>
+    <color name="positiveCases">#DB6918</color>
+    <color name="numberDeaths">#A9002B</color>
+    <color name="colorSelected">#8C8D91</color>
+    <color name="SelectedBackground">#555454</color>
 </resources>

@@ -39,6 +39,9 @@ class MainActivity : AppCompatActivity() {
         addUser.put("nama", nama)
         addUser.put("password",password)
         addUser.put("email",email)
+        addUser.put("nomor_hp","")
+        addUser.put("confidence","")
+        addUser.put("status","true")
         NetworkModule.service().signup(addUser).enqueue(object : Callback<responseRequestOnly> {
             val alertDialog : AlertDialog.Builder = AlertDialog.Builder(this@MainActivity)
             override fun onResponse(call: Call<responseRequestOnly>, response: Response<responseRequestOnly>) {

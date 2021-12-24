@@ -9,8 +9,7 @@ object utilities   {
         hashMapDat["email"] = user.email.toString()
         hashMapDat["password"] = user.password.toString()
         hashMapDat["nomor_hp"] = user.nomor_hp.toString()
-        hashMapDat["alamat"] = user.alamat.toString()
-        hashMapDat["hasil_prediksi"] = user.hasil_prediksi.toString().toDouble()
+        hashMapDat["confidence"] = user.confidence.toString().toDouble()
         hashMapDat["nama"] = user.nama.toString()
         return hashMapDat
     }
