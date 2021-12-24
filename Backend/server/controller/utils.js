@@ -1,7 +1,7 @@
-exports.ResponseBad = (code, message) => {
+exports.ResponseNoData = (code, message) => {
   return JSON.stringify({ message: message, code: code });
 };
 
-exports.ResponseOk = (code, message, data) => {
+exports.Response = (code, message, data) => {
   return JSON.stringify({ message: message, code: code, data: data });
 };

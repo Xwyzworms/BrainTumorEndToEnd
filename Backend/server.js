@@ -14,6 +14,8 @@ const PORT = process.env.PORT || 9999;
 app.use(morgan("tiny"));
 //MongoDb Connection
 connectDB();
+//Implement Recent Version For JSON Bodies
+app.use(express.json());
 //parase request to BodyParser
 app.use(bodyParser.urlencoded({ extended: true }));
 

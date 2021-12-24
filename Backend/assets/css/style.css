@@ -229,3 +229,11 @@ table {
   background-color: var(--icon-secondary);
   transition: all 0.3s;
 }
+
+.delete {
+  cursor: pointer;
+}
+
+.delete > span {
+  pointer-events: none;
+}

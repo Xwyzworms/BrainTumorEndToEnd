@@ -4,7 +4,6 @@ const mongoClient = require("mongodb").MongoClient;
 const objectId = require("mongodb").ObjectId;
 const url = "mongodb://localhost:27017/";
 
-app.use(express.json());
 const getSuccess = () => {
   obj = {
     code: 200,

@@ -6,6 +6,7 @@ let data = {
   password: { type: String, required: true },
   nomor_hp: { type: String, required: false },
   confidence: { type: Number, required: false },
+  status: { type: Boolean, required: true },
 };
 let Schema = new mongoose.Schema(data);
 
